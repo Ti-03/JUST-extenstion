@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<style>
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  rgb(30, 30, 30); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 63, 63); 
+}
+
+
+
+    body{
+        background-color: rgb(41, 48, 51);
+        color: white;
+        align-content: center;
+        text-align: center; 
+        width: 300;
+        height: 500px;
+
+    }
+    h1{
+        margin-top: 20;
+    }
+    h1:hover{
+        color:  rgb(24, 87, 164);
+        transition: all 0.2s ease-in-out;
+
+    }
+    button{
+        background-color: rgb(20, 24, 25);
+        color: white;
+        width: 100px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 3px;
+        border-radius: 5px;
+
+        
+    }
+    button:hover{
+        background-color: #1857a4;
+
+    }
+    em{
+        color: rgb(0, 75, 164);
+    }
+    h3{
+        margin-top: 20;
+        }
+     footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color:  rgb(30, 30, 30);
+        width: 100%;
+        height: 20;
+        font-size: 12;
+        text-align: left;
+        padding-left: 10;
+        padding-top: 10;
+
+    }footer a{
+        text-decoration: none;
+        color:rgb(0, 183, 255);
+    }
+    div label{
+        padding-left:10 ;
+        padding-right:10 ;
+    }
+  
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+
+
+    
+
+</style>
+</head>
+
+
+
+<body>
+    <a ><button style="width: fit-content; height: max-content; font-size: 30px; position: fixed; top: 5px; left: 5px;" id="RegHelper2">&lt;</button></a>
+ 
+    <a ><button style="width: fit-content; height: max-content; font-size: 15px; position: fixed; top: 5px; right: 5px;" id="Del">Del</button></a>
+<a href="https://services.just.edu.jo/sturegistration/Login.aspx"target="_blank"><h1>Register Helper</h1></a>
+        <form>
+        <input type="text" size="10px" style="color: black; "id="CName" placeholder="Course name"  >
+        <input type="text" size="10px" style=" color: black; " maxlength="10" id="CNumber"  placeholder="Line number">
+        <input type="text" size="2" style=" color: black; " maxlength="3" id="CSection"  placeholder="Section">
+
+        <a><button id="addEntrie" style="width: fit-content; height: fit-content;font-size: 25px;">+</button></a>
+    </form>
+
+    <div id="Entries" style="align-items: center; direction: ltr;"></div>
+    <footer><a href="https://twitter.com/Qutibah_" target="_blank">Ti &copy; 2023</a>
+
+
+    </footer>
+    <script src="RegHelper.js"></script>
+</body>
+</html>

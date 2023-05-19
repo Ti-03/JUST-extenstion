@@ -1,0 +1,247 @@
+<html>
+
+<head>
+<style>
+    body{
+        background-color: rgb(41, 48, 51);
+        color: white;
+        align-content: center;
+        text-align: center; 
+        width: 300;
+        height: 500px;
+
+    }
+    h1{
+        margin-top: 20;
+    }
+    h1:hover{
+        color:  rgb(24, 87, 164);
+        transition: all 0.2s ease-in-out;
+
+    }
+    button{
+        background-color: rgb(20, 24, 25);
+        color: white;
+        width: 100px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 3px;
+        border-radius: 5px;
+
+        
+    }
+    button:hover{
+        background-color: #1857a4;
+
+    }
+    em{
+        color: rgb(0, 75, 164);
+    }
+    h3{
+        margin-top: 20;
+        }
+     footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color:  rgb(30, 30, 30);
+        width: 100%;
+        height: 20;
+        font-size: 12;
+        text-align: left;
+        padding-left: 10;
+        padding-top: 10;
+
+    }footer a{
+        text-decoration: none;
+        color:rgb(0, 183, 255);
+    }
+    div label{
+        padding-left:10 ;
+        padding-right:10 ;
+    }
+  
+    a{
+        text-decoration: none;
+        color: white;
+    }
+
+
+/* start of code  */
+    .card {
+ width: 100%;
+ height: 150px;
+ background-image: linear-gradient(163deg, rgb(0, 115, 255) 0%, rgb(0, 75, 164) 100%);
+ border-radius: 20px;
+ transition: all .3s;
+}
+
+.card2 {
+ width: 100%;
+ height: 150px;
+ background-color:  rgb(41, 48, 51);
+ transition: all .2s;
+}
+
+.card2:hover {
+ transform: scale(0.98);
+ border-radius: 20px;
+}
+
+.card:hover {
+ box-shadow: 0px 0px 30px 1px hwb(213 0% 0% / 0.3);
+}
+
+
+
+/* end of code  */
+
+
+
+
+
+
+
+
+
+/* slider  */
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  width: 1.75em;
+  height: 1em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: .4s;
+  border-radius: 15px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 0.7em;
+  width: 0.7em;
+  border-radius: 10px;
+  left: 0.135em;
+  bottom: 0.125em;
+  background-color: #adb5bd;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(0.7em);
+  background-color: #fff;
+}
+
+
+
+/* slider code end */
+
+
+
+</style>
+</head>
+
+
+<body>
+
+<a href="https://services.just.edu.jo/stuservices/Student/Default.aspx" target="_blank"><h1>JUST extenstion</h1></a>
+
+
+
+<div class="card">
+    <div class="card2">
+
+<div id="eva">
+
+    <br>
+<h3 title=":)">course evaluation is <em>auto</em> activated</h3>
+<form>
+<label><input type="radio" name="eva" value="1.75/1" > Bad </label>
+<label><input type="radio" name="eva" value="3.50/3" > Average </label>
+<label><input type="radio" name="eva" value="5/5" checked > Exellent </label>
+
+
+
+<br>
+</form>
+
+
+<button id="submit" style="width:fit-content; margin-top : 10;">Submit</button> 
+
+</div>
+
+</div>
+</div>
+
+<hr style="border: none; height: 2px; background: linear-gradient(to right, rgb(61, 71, 76), rgb(70, 71, 72)); width: 80%;">
+
+
+
+<!-- slider for auto close alert  -->
+<h3>More tools</h3>
+ <p style="align-content: center;" title="There are some notifications appear on the website, when you enable this it will be auto closed">Auto close notifications  
+    <label class="switch">
+        <input type="checkbox" id="ACN" checked="false">
+        <span class="slider"></span>
+    </label> </p> 
+    <p style="align-content: center;" >Dark Theme
+        <label class="switch" style="margin-left: 3.5em;">
+            <input type="checkbox" id="Darktheme" checked="false">
+            <span class="slider"></span>
+        </label> </p>
+        <a><button  style=" height: fit-content; width: fit-content;" id="RegHelper">Register helper</button></a>
+
+
+    <p style="color:gray;">more tools coming soon</p>
+
+<!--  -->
+
+
+
+<hr style="border: none; height: 2px; background: linear-gradient(to right, rgb(61, 71, 76), rgb(70, 71, 72)); width: 80%;">
+
+<h3>Quick links</h3>
+<a href= "https://services.just.edu.jo/sturegistration/" target="_blank"   class="button2" ><button>Registration</button></a>
+<a href= "https://services.just.edu.jo/courseschedule/" target="_blank"   class="button2" ><button>Seschedule</button></a>
+<a href= "https://services.just.edu.jo/stuservices/Student/SemResult/CurrentSemesterResult.aspx" target="_blank"   class="button2" ><button>final marks</button></a>
+<footer><a href="https://twitter.com/Qutibah_" target="_blank">Ti &copy; 2023</a>
+
+
+</footer>
+<script src="eva.js"></script>
+</body>
+</html>
