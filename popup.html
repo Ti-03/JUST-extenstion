@@ -13,23 +13,17 @@
     }
     h1{
         margin-top: 20;
+
+
     }
     h1:hover{
         color:  rgb(24, 87, 164);
         transition: all 0.2s ease-in-out;
 
     }
-    button{
-        background-color: rgb(20, 24, 25);
-        color: white;
-        width: 100px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom: 3px;
-        border-radius: 5px;
+   
 
-        
-    }
+    
     button:hover{
         background-color: #1857a4;
 
@@ -173,6 +167,8 @@ input:checked + .slider:before {
 
 
 </style>
+<link rel="stylesheet" type="text/css" href="buttonsStyle.css" />
+
 </head>
 
 
@@ -192,7 +188,7 @@ input:checked + .slider:before {
 <form>
 <label><input type="radio" name="eva" value="1.75/1" > Bad </label>
 <label><input type="radio" name="eva" value="3.50/3" > Average </label>
-<label><input type="radio" name="eva" value="5/5" checked > Exellent </label>
+<label><input type="radio" name="eva" value="5/5"  > Exellent </label>
 
 
 
@@ -235,11 +231,13 @@ input:checked + .slider:before {
 <hr style="border: none; height: 2px; background: linear-gradient(to right, rgb(61, 71, 76), rgb(70, 71, 72)); width: 80%;">
 
 <h3>Quick links</h3>
-<a href= "https://services.just.edu.jo/sturegistration/" target="_blank"   class="button2" ><button>Registration</button></a>
-<a href= "https://services.just.edu.jo/courseschedule/" target="_blank"   class="button2" ><button>Seschedule</button></a>
-<a href= "https://services.just.edu.jo/stuservices/Student/SemResult/CurrentSemesterResult.aspx" target="_blank"   class="button2" ><button>final marks</button></a>
-<footer><a href="https://twitter.com/Qutibah_" target="_blank">Ti &copy; 2023</a>
+<a href= "https://services.just.edu.jo/sturegistration/" target="_blank"   ><button style="width: fit-content;height: fit-content;">Registration</button></a>
+<a href= "https://services.just.edu.jo/courseschedule/" target="_blank"   ><button  style="width: fit-content;height: fit-content;">Seschedule</button></a>
+<a href= "https://services.just.edu.jo/stuservices/Student/SemResult/CurrentSemesterResult.aspx" target="_blank"   ><button  style="width: fit-content;height: fit-content;">Final marks</button></a>
+<a href="https://github.com/Ti-03/JUST-extenstion"  target="_blank" style="bottom: 2px;right: 2px;position: absolute;z-index: 5;"><img src="icons/github.png" width="25" height="25" style="margin-left: 10px;"></a>
 
+<footer><a href="https://twitter.com/Qutibah_" target="_blank">Ti &copy; 2023</a>
+<!-- insert an image with path : icons/github.png -->
 
 </footer>
 <script src="eva.js"></script>
