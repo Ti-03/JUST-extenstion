@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener(
 
 
 
-const autoFun = function(Rvalue){
+const autoFun = function(Rvalue="5/5"){
 	
     
 if(window.location.href=="https://services.just.edu.jo/stuservices/Student/CourseQA/CQA_AssessCourse.aspx"){

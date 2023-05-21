@@ -2,12 +2,13 @@
 
 
 
-
+if(document.getElementById("ctl00_lbAllAccounts")!=null){
 logoutB = document.getElementById("ctl00_lbAllAccounts");
+logoutB.type = "button";
+
 logoutB.value= "خروج";
 logoutB.class = "test2";
 logoutB.name="test";
-logoutB.type = "button";
 logoutB.id = "test";
 
 logoutB.addEventListener("click", ()=>{
@@ -18,7 +19,7 @@ logoutB.addEventListener("click", ()=>{
 
 });
 
-
+}
 
 
 chrome.runtime.onMessage.addListener(
