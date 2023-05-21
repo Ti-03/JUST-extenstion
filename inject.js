@@ -21,6 +21,15 @@ if(window.location.href=="https://services.just.edu.jo/stuservices/Student/Cours
     if(Rvalue=="5/5") Rvalue="5";
     else if(Rvalue=="3.50/3") Rvalue="3";
     else if(Rvalue=="1.75/1") Rvalue="1";
+
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+
+    for (let i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].value === Rvalue) 
+       
+          radioButtons[i].checked = true;
+        }
+    
     }
 
 
