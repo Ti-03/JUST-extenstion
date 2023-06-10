@@ -13,6 +13,5 @@ Download the extension and try it in your browser </a>
 
 <h1>Arabic video about the extension</h1>
 
-
-Uploading JUST Extension final version .mp4…
+https://github.com/Ti-03/JUST-extenstion/assets/38795261/6be182b1-0642-4738-b887-45ad1d660898
 
