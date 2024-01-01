@@ -166,6 +166,79 @@ input:checked + .slider:before {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Slider value code  */
+
+
+
+.PB-range-slider {
+  -webkit-appearance: none;
+  width: 40%;
+  height: 4px;
+  border-radius: 5px;
+  background: #D5DBE1;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.PB-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 0px 8px #007bff33;
+  transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.PB-range-slider-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  
+}
+
+.PB-range-slidervalue {
+  font-weight: 600;
+}
+
+/* Slider value code end */
+
+
+
 </style>
 <link rel="stylesheet" type="text/css" href="buttonsStyle.css" />
 
@@ -186,17 +259,20 @@ input:checked + .slider:before {
     <br>
 <h3 title=":)">course evaluation is <em>auto</em> activated</h3>
 <form>
-<label><input type="radio" name="eva" value="1.75/1" > Bad </label>
-<label><input type="radio" name="eva" value="3.50/3" > Average </label>
-<label><input type="radio" name="eva" value="5/5"  checked> Exellent </label>
 
 
+
+
+    <div class="PB-range-slider-div">
+        <p class="PB-range-slidervalue" style="color: red;">0</p>
+        <input type="range" min="0" max="10" value="50" class="PB-range-slider"name="eva" id="evaRange">
+        <p class="PB-range-slidervalue" style="color: #007bff;">10</p>
+        </div>
 
 <br>
 </form>
 
 
-<button id="submit" style="width:fit-content; margin-top : 10;">Submit</button> 
 
 </div>
 
@@ -219,7 +295,7 @@ input:checked + .slider:before {
             <input type="checkbox" id="Darktheme" checked="false">
             <span class="slider"></span>
         </label> </p>
-        <a><button  style=" height: fit-content; width: fit-content;" id="RegHelper">Register helper</button></a>
+        <a><button  style=" height: fit-content; width: fit-content; " id="RegHelper">Register helper</button> <button  style=" height: fit-content; width: fit-content;" id="calc">GPA Calculator</button></a>
 
 
     <p style="color:gray;">more tools coming soon</p>
@@ -230,10 +306,11 @@ input:checked + .slider:before {
 
 <hr style="border: none; height: 2px; background: linear-gradient(to right, rgb(61, 71, 76), rgb(70, 71, 72)); width: 80%;">
 
-<h3>Quick links</h3>
-<a href= "https://services.just.edu.jo/sturegistration/" target="_blank"   ><button style="width: fit-content;height: fit-content;">Registration</button></a>
-<a href= "https://services.just.edu.jo/courseschedule/" target="_blank"   ><button  style="width: fit-content;height: fit-content;">Seschedule</button></a>
-<a href= "https://services.just.edu.jo/stuservices/Student/SemResult/CurrentSemesterResult.aspx" target="_blank"   ><button  style="width: fit-content;height: fit-content;">Final marks</button></a>
+<h4>Quick links</h4>
+<a href= "https://services.just.edu.jo/sturegistration/" target="_blank"   ><button style="width: fit-content;height: fit-content; font-size: 10px;">Registration</button></a>
+<a href= "https://services.just.edu.jo/courseschedule/" target="_blank"   ><button  style="width: fit-content;height: fit-content; font-size: 10px;">Seschedule</button></a>
+<a href= "https://services.just.edu.jo/stuservices/Student/SemResult/CurrentSemesterResult.aspx" target="_blank"   ><button  style="width: fit-content;height: fit-content; font-size: 10px;">Final marks</button></a>
+<a href= "https://elearn.just.edu.jo/current/" target="_blank"   ><button  style="width: fit-content;height: fit-content; font-size: 10px;">E-Learning</button></a>
 <a href="https://github.com/Ti-03/JUST-extenstion"  target="_blank" style="bottom: 2px;right: 2px;position: absolute;z-index: 5;"><img src="icons/github.png" width="25" height="25" style="margin-left: 10px;"></a>
 
 <footer><a href="https://twitter.com/Qutibah_" target="_blank">Ti &copy; 2023</a>
@@ -241,5 +318,6 @@ input:checked + .slider:before {
 
 </footer>
 <script src="eva.js"></script>
+
 </body>
 </html>

@@ -14,13 +14,13 @@ chrome.runtime.onMessage.addListener(
 
 
 
-const autoFun = function(Rvalue="5/5"){
+const autoFun = function(Rvalue="10/10"){
 	
     
 if(window.location.href=="https://services.just.edu.jo/stuservices/Student/CourseQA/CQA_AssessCourse.aspx"){
-    if(Rvalue=="5/5") Rvalue="5";
-    else if(Rvalue=="3.50/3") Rvalue="3";
-    else if(Rvalue=="1.75/1") Rvalue="1";
+    if(Rvalue=="10/10") Rvalue="5";
+    else if(Rvalue=="5/5") Rvalue="3";
+    else if(Rvalue=="0/0") Rvalue="1";
 
     var radioButtons = document.querySelectorAll('input[type="radio"]');
 

@@ -10,4 +10,3 @@ Chrome extenstion used specifically for [Jordan university of science and techno
 And alot more...<br>
 <a href="https://chrome.google.com/webstore/detail/just-extension/ckpjnaimhgfdngbhcojbmlmnncdmenef">
 Download the extension and try it in your browser </a>
-

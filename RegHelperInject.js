@@ -1,5 +1,5 @@
-Lineid = document.getElementById("ctl00_cphBody_yknZLfaHxKqGsqTRCWrrdwgyE");
-SecId = document.getElementById("ctl00_cphBody_QUwvWejIwFffsHdQoSNBjsQch");
+//Lineid = document.getElementById("ctl00_cphBody_QQjPPCUMTQByFBTpOhXDbhnwx");
+//SecId = document.getElementById("ctl00$cphBody$HlJaEHFnLsEjVrtIewstbRPIW");
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         

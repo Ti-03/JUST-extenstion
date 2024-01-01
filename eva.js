@@ -1,10 +1,13 @@
 let evaV;
-const submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", function(){
-    const radioButtons = document.getElementsByName("eva");
-    for (let i = 0; i < radioButtons.length; i++) {
-        if (radioButtons[i].checked) {
-            evaV = radioButtons[i].value;  
+
+
+var slider = document.getElementById("evaRange");
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function(){
+    
+       
+            evaV = slider.value+"/"+slider.value;
             
 
                 chrome.tabs.query({currentWindow: true}, function(tabs) {
@@ -16,9 +19,8 @@ submitButton.addEventListener("click", function(){
                 });
 
                 // chrome.runtime.sendMessage({greeting: "hello",  value : evaV});
-               break;
-        }
-    }
+        
+    
    /* 
    
                    localStorage.setItem("evaVV=",evaV);
@@ -32,7 +34,7 @@ submitButton.addEventListener("click", function(){
         });*/
 
     console.log(evaV);
-});
+};
 
 AutoCN = document.getElementById("ACN");
 if(localStorage.getItem("notifications")==1)AutoCN.checked=true;
@@ -95,6 +97,15 @@ regHelper.addEventListener("click",function(){
   window.location.replace("RegHelper.html");
 
 });
+
+if(localStorage.getItem("regHelpCheck")==2) window.location.replace("Calculator.html");
+regHelper = document.getElementById("calc");
+regHelper.addEventListener("click",function(){
+  localStorage.setItem("regHelpCheck",2);
+  window.location.replace("Calculator.html");
+
+});
+
 
 
 

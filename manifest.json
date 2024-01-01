@@ -1,8 +1,8 @@
 {
    "name": "JUST extension",
    "manifest_version":3,
-   "version":"1.132",
-   "description": "JUST extension makes it easer for you to browse JUST website",
+   "version":"1.203",
+   "description": "JUST extension makes it easier for you to browse JUST website",
    "icons": {
       "128": "icons/128.png",
       "48": "icons/48.png"
