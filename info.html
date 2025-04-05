@@ -81,6 +81,21 @@
         text-decoration: none;
         color: white;
     }
+    #addEntrie:hover{
+            cursor: copy;
+          background-color: #2ea400;
+            color: white;
+  
+      }
+      #addEntrie{
+        font-size: 1000px;
+        margin-top: 5px;
+        width: fit-content;
+        height: fit-content;
+          background-color: #ffffff;
+            color: rgb(0, 0, 0);
+  
+      }
 
 
 
@@ -92,23 +107,26 @@
 
 
 <body>
-    <a ><button style="width: fit-content; height: max-content; font-size: 30px; position: fixed; top: 5px; left: 5px;" id="RegHelper2">&lt;</button></a>
+    <a href="popup.html"><button style="width: fit-content; height: max-content; font-size: 30px; position: fixed; top: 5px; left: 5px;" id="RegHelper2">&lt;</button></a>
  
-    <a ><button style="width: fit-content; height: max-content; font-size: 15px; position: fixed; top: 5px; right: 5px;" id="Del">Del</button></a>
-<a href="https://services.just.edu.jo/sturegistration/Login.aspx"target="_blank"><h1>Register Helper</h1></a>
-        <form>
-        <input type="text" size="10px" style="color: black; "id="CName" placeholder="Course name"  >
-        <input type="text" size="10px" style=" color: black; " maxlength="10" id="CNumber"  placeholder="Line number">
-        <input type="text" size="2" style=" color: black; " maxlength="3" id="CSection"  placeholder="Section">
+   <!-- <a ><button style="width: fit-content; height: max-content; font-size: 15px; position: fixed; top: 5px; right: 5px;" id="Del">Del</button></a> -->
+<a><h1>About</h1></a>
+<br>
+<div style="margin-bottom: 30px; padding: 20px; background-color: #1857a4; border-radius: 8px;">
+  <h3 style="color: white; margin: 0;">What is JUST Extension?</h3>
+  <p style="color: white; margin: 10px 0 0 0;">JUST Extension is an all-in-one extension that can assist you with various tasks as a student at JUST.</p>
+</div>
+<div style="margin-bottom: 30px; padding: 20px; background-color: #1857a4; border-radius: 8px;">
+  <h3 style="color: white; margin: 0;">What can JUST Extension do?</h3>
+  <p style="color: white; margin: 10px 0 0 0;">JUST Extension can help you with registration, evaluation, and even serve as a calculator for your GPA. More features are coming soon.</p>
+</div>
 
-        <a><button id="addEntrie" style="width: fit-content; height: fit-content;font-size: 25px;">+</button></a>
-    </form>
 
-    <div id="Entries" style="align-items: center; direction: ltr;"></div>
+
     <footer><a href="https://linktr.ee/ti03" target="_blank">Ti &copy; 2024</a>
 
 
     </footer>
-    <script src="RegHelper.js"></script>
+  
 </body>
 </html>
