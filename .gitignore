@@ -4,13 +4,15 @@ node_modules/
 # Build outputs
 dist/
 build/
-
+ref/
 # IDE - VS Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.md
+!readme.md
 
 # IDE - JetBrains
 .idea/
@@ -42,3 +44,6 @@ npm-debug.log*
 # Archives
 *.rar
 *.7z
+
+# Screenshots (keep folder, ignore temp files)
+screenshots/*.tmp

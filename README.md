@@ -12,6 +12,13 @@ A Chrome extension designed specifically for students at [Jordan University of S
 
 ## ✨ Features
 
+### 🎨 Modern UI Enhancements
+- **Interactive Guidance Plan Tree View** - Visualize your الخطة الاسترشادية as an interactive, collapsible tree with card and tree views
+- **Academic Plan Progress Dashboard** - Track your الخطة الاكاديمية with a modern dashboard showing completed, in-progress, and pending courses
+- **Modern Student Card** - Beautifully redesigned بطاقة الطالب with organized sections and print-friendly layout
+- **Enhanced Sidebar Navigation** - Modern menu with icons, search functionality, and recently accessed items
+
+### 🌙 Core Features
 - **Dark Theme** - Enable dark mode for comfortable browsing
 - **Auto Course Evaluation** - Automatically complete course evaluations
 - **Registration Helper** - Assist with course registration
@@ -44,7 +51,10 @@ A Chrome extension designed specifically for students at [Jordan University of S
 │   │   ├── login.js
 │   │   ├── inject.js
 │   │   ├── eva.js
-│   │   └── RegHelperInject.js
+│   │   ├── RegHelperInject.js
+│   │   ├── guidancePlanVisualizer.js  # 🆕 Interactive tree view
+│   │   ├── academicPlanEnhancer.js    # 🆕 Progress dashboard
+│   │   └── studentCardModernizer.js   # 🆕 Modern student card
 │   ├── pages/             # Extension pages (popup, info, etc.)
 │   │   ├── popup.html
 │   │   ├── popup.js
@@ -59,7 +69,8 @@ A Chrome extension designed specifically for students at [Jordan University of S
 │   │   └── info.html
 │   ├── styles/            # CSS files
 │   │   ├── buttonsStyle.css
-│   │   └── fastButtons.css
+│   │   ├── fastButtons.css
+│   │   └── modernTheme.css            # 🆕 Modern theme system
 │   └── utils/             # Utility scripts
 │       ├── Ads.js
 │       ├── fastButtons.js
@@ -76,6 +87,15 @@ This extension is built using:
 - Manifest V3
 - Vanilla JavaScript
 - Chrome Extension APIs
+- Modern CSS with custom properties
+- Responsive design patterns
+
+### Recent Updates (v2.0.0)
+- ✨ Interactive tree visualization for guidance plans
+- 📊 Progress dashboard for academic plans
+- 💳 Modernized student card design
+- 🔍 Enhanced sidebar with search and recent items
+- 🎨 Comprehensive modern theme system
 
 ## 📝 License
 

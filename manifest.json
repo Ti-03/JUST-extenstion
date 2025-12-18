@@ -1,8 +1,8 @@
 {
    "name": "JUST extension",
    "manifest_version": 3,
-   "version": "1.207",
-   "description": "JUST extension makes it easier for you to browse JUST website",
+   "version": "2.0.0",
+   "description": "JUST extension makes it easier for you to browse JUST website with modern UI enhancements",
    "icons": {
       "128": "icons/128.png",
       "48": "icons/48.png"
@@ -118,6 +118,15 @@
          ],
          "js": [
             "src/utils/studentCardFetch.js"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/Student/Reg/GuidancePlan.aspx"
+         ],
+         "js": [
+            "src/content/guidancePlanVisualizer.js"
          ],
          "run_at": "document_end"
       }

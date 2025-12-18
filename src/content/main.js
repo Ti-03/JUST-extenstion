@@ -270,7 +270,7 @@ div .mainContent .Invoice {
 
 
 `;document.head.appendChild(Mainstyle);
-
+document.body.classList.add('dark-mode');
 
 
 
@@ -531,6 +531,419 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
         console.warn('Could not automatically close notification:', error);
     }
 }
+
+
+// Modern Sidebar Enhancement
+(function enhanceSidebar() {
+    const menuDiv = document.querySelector('.menuDiv');
+    if (!menuDiv) return;
+
+    // Add modern styles
+    const modernMenuStyle = document.createElement('style');
+    modernMenuStyle.innerHTML = `
+        .menuDiv {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            position: relative !important;
+        }
+
+        .menuDiv.sidebar-collapsed {
+            width: 50px !important;
+            overflow: visible !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+        }
+
+        .menuDiv.sidebar-collapsed .search-menu-container {
+            padding: 5px !important;
+            justify-content: center !important;
+            background: transparent !important;
+        }
+
+        .menuDiv.sidebar-collapsed > *:not(.search-menu-container) {
+            display: none !important;
+        }
+
+        .menuDiv.sidebar-collapsed .search-menu-input {
+            display: none !important;
+        }
+
+        .menuDiv.sidebar-collapsed .sidebar-toggle-btn {
+            padding: 8px !important;
+        }
+
+        body.sidebar-collapsed .mainContent {
+            margin-right: auto !important;
+            margin-left: auto !important;
+            width: 100% !important;
+            max-width: 1400px !important;
+        }
+
+        .sidebar-toggle-btn {
+            padding: 6px !important;
+            background: rgba(255,255,255,0.9) !important;
+            border: none !important;
+            border-radius: 6px !important;
+            color: #2c3e50 !important;
+            font-size: 14px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-weight: 600 !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+            min-width: 28px !important;
+            width: 28px !important;
+            height: 28px !important;
+        }
+
+        .sidebar-toggle-btn:hover {
+            background: white !important;
+            box-shadow: 0 0 0 2px rgba(24, 87, 164, 0.3) !important;
+        }
+
+        .sidebar-toggle-btn:active {
+            transform: scale(0.98) !important;
+        }
+
+        .menuDiv.sidebar-collapsed .sidebar-toggle-btn {
+            margin-right: 0 !important;
+        }
+
+        .menuDiv ul {
+            scrollbar-width: thin !important;
+            scrollbar-color: rgba(100,100,100,0.3) transparent !important;
+            padding-bottom: 20px !important;
+        }
+
+        .menuDiv ul::-webkit-scrollbar {
+            width: 6px !important;
+        }
+
+        .menuDiv ul::-webkit-scrollbar-thumb {
+            background: rgba(100,100,100,0.3) !important;
+            border-radius: 3px !important;
+        }
+
+        body .menuDiv #ctl00_MainMenuOnSeat li {
+            position: relative !important;
+            transition: all 0.3s ease !important;
+            margin: 0 !important;
+            border-bottom: none !important;
+        }
+
+        body .menuDiv #ctl00_MainMenuOnSeat li:hover {
+            transform: translateX(5px) !important;
+        }
+
+        body .menuDiv #ctl00_MainMenuOnSeat li a {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            padding: 10px 15px !important;
+            text-decoration: none !important;
+            line-height: 1.5 !important;
+            white-space: nowrap !important;
+        }
+
+        .menu-icon {
+            font-size: 16px !important;
+            width: 20px !important;
+            min-width: 20px !important;
+            max-width: 20px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            margin-left: 5px !important;
+        }
+
+        .menu-text {
+            flex: 1 !important;
+            display: inline-block !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+        }
+
+        .ContainerSubMenu {
+            animation: slideIn 0.3s ease !important;
+        }
+
+        body .menuDiv .SubMenuDiv ul li a {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            padding: 10px 15px !important;
+            text-decoration: none !important;
+            line-height: 1.5 !important;
+            white-space: nowrap !important;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .search-menu-container {
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        .search-menu-input {
+            flex: 1 !important;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.9);
+            color: #2c3e50;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            margin-right: 8px !important;
+        }
+
+        body.dark-mode .search-menu-input {
+            background: #2c3e50;
+            color: #ffffff;
+        }
+
+        .search-menu-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(24, 87, 164, 0.3);
+        }
+
+        body.dark-mode .search-menu-input:focus {
+            background: #3d4e60;
+            box-shadow: 0 0 0 2px rgba(46, 164, 0, 0.4);
+        }
+
+        .search-menu-input::placeholder {
+            color: #6c757d;
+        }
+
+        body.dark-mode .search-menu-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .menu-item-hidden {
+            display: none !important;
+        }
+
+        .menu-highlight {
+            background: rgba(255, 255, 0, 0.2);
+        }
+
+        .recent-items {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            margin: 0 10px 10px 10px;
+            border-radius: 6px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        body.dark-mode .recent-items {
+            background: #1e1e1e;
+            margin: 0;
+        }
+
+        .recent-title {
+            font-size: 12px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .recent-link {
+            display: block;
+            padding: 6px 10px;
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .recent-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(3px);
+            color: white;
+        }
+    `;
+    document.head.appendChild(modernMenuStyle);
+
+    // Add icons to menu items
+    const menuIcons = {
+        'نتائج': '📊',
+        'الجدول': '📅',
+        'التسجيل': '✏️',
+        'المالية': '💰',
+        'مالية': '💳',
+        'الخطة': '📚',
+        'بطاقة': '🎫',
+        'المعلومات': 'ℹ️',
+        'الوثائق': '📄',
+        'الإمتحانات': '📝',
+        'امتحان': '✍️',
+        'استثناء': '⚠️',
+        'تحويل': '🔄',
+        'التخصص': '🎓',
+        'الكلمة السرية': '🔐',
+        'خروج': '🚪',
+        'التقييم': '⭐',
+        'الحراك': '🌍',
+        'القروض': '💵',
+        'الفواتير': '🧾',
+        'المكتبة': '📖',
+        'الرسائل': '✉️',
+        'المخالفات': '⚖️'
+    };
+
+    const menuItems = document.querySelectorAll('#ctl00_MainMenuOnSeat li a');
+    menuItems.forEach(item => {
+        const text = item.textContent.trim();
+        const icon = Object.keys(menuIcons).find(key => text.includes(key));
+        
+        if (icon) {
+            // Wrap existing text in span
+            const textNode = item.childNodes[0];
+            if (textNode && textNode.nodeType === 3) {
+                const textSpan = document.createElement('span');
+                textSpan.className = 'menu-text';
+                textSpan.textContent = textNode.textContent.trim();
+                textNode.replaceWith(textSpan);
+            }
+            
+            // Add icon at the beginning
+            const iconSpan = document.createElement('span');
+            iconSpan.className = 'menu-icon';
+            iconSpan.textContent = menuIcons[icon];
+            item.insertBefore(iconSpan, item.firstChild);
+        }
+    });
+
+    // Add search functionality
+    const menuUl = document.querySelector('#ctl00_MainMenuOnSeat');
+    if (menuUl) {
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'search-menu-container';
+        
+        // Add toggle button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'sidebar-toggle-btn';
+        toggleBtn.innerHTML = '◀';
+        toggleBtn.title = 'إخفاء/إظهار القائمة';
+        
+        // Create search input
+        const searchInput = document.createElement('input');
+        searchInput.type = 'text';
+        searchInput.className = 'search-menu-input';
+        searchInput.placeholder = '🔍 ابحث في القائمة...';
+        
+        // Insert toggle button first, then search input
+        searchContainer.appendChild(toggleBtn);
+        searchContainer.appendChild(searchInput);
+        
+        menuUl.parentElement.insertBefore(searchContainer, menuUl);
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const allMenuItems = document.querySelectorAll('#ctl00_MainMenuOnSeat > li');
+            
+            allMenuItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (searchTerm === '' || text.includes(searchTerm)) {
+                    item.classList.remove('menu-item-hidden');
+                    if (searchTerm !== '') {
+                        item.classList.add('menu-highlight');
+                    } else {
+                        item.classList.remove('menu-highlight');
+                    }
+                } else {
+                    item.classList.add('menu-item-hidden');
+                    item.classList.remove('menu-highlight');
+                }
+            });
+        });
+        
+        // Toggle functionality
+        let sidebarVisible = true;
+        toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            sidebarVisible = !sidebarVisible;
+            
+            if (sidebarVisible) {
+                menuDiv.classList.remove('sidebar-collapsed');
+                document.body.classList.remove('sidebar-collapsed');
+                toggleBtn.innerHTML = '◀';
+            } else {
+                menuDiv.classList.add('sidebar-collapsed');
+                document.body.classList.add('sidebar-collapsed');
+                toggleBtn.innerHTML = '▶';
+            }
+        });
+    }
+
+    // Add recently accessed items
+    function addRecentItems() {
+        const recent = JSON.parse(localStorage.getItem('recentMenuItems') || '[]');
+        if (recent.length === 0) return;
+
+        const recentContainer = document.createElement('div');
+        recentContainer.className = 'recent-items';
+        recentContainer.innerHTML = `
+            <div class="recent-title">⚡ آخر الصفحات المستخدمة</div>
+            ${recent.slice(0, 3).map(item => `
+                <a href="${item.url}" class="recent-link">${item.text}</a>
+            `).join('')}
+        `;
+        
+        const menuUl = document.querySelector('#ctl00_MainMenuOnSeat');
+        if (menuUl && menuUl.parentElement) {
+            menuUl.parentElement.insertBefore(recentContainer, menuUl);
+        }
+    }
+
+    // Track menu clicks
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const text = this.textContent.trim();
+            const url = this.href;
+            const icon = this.querySelector('.menu-icon')?.textContent || '📌';
+            
+            let recent = JSON.parse(localStorage.getItem('recentMenuItems') || '[]');
+            recent = recent.filter(r => r.url !== url);
+            recent.unshift({ text, url, icon, date: Date.now() });
+            recent = recent.slice(0, 10);
+            
+            localStorage.setItem('recentMenuItems', JSON.stringify(recent));
+        });
+    });
+
+    addRecentItems();
+
+})();
 
 
 
