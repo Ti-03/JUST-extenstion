@@ -8,15 +8,8 @@ A Chrome extension designed specifically for students at [Jordan University of S
 
 [![JUST Extension Demo](https://img.youtube.com/vi/7kzTqBQONBo/0.jpg)](https://www.youtube.com/watch?v=7kzTqBQONBo)
 
-[Watch the video trailer on Twitter](https://twitter.com/i/status/1626635494212632602)
 
 ## ✨ Features
-
-### 🎨 Modern UI Enhancements
-- **Interactive Guidance Plan Tree View** - Visualize your الخطة الاسترشادية as an interactive, collapsible tree with card and tree views
-- **Academic Plan Progress Dashboard** - Track your الخطة الاكاديمية with a modern dashboard showing completed, in-progress, and pending courses
-- **Modern Student Card** - Beautifully redesigned بطاقة الطالب with organized sections and print-friendly layout
-- **Enhanced Sidebar Navigation** - Modern menu with icons, search functionality, and recently accessed items
 
 ### 🌙 Core Features
 - **Dark Theme** - Enable dark mode for comfortable browsing
@@ -53,8 +46,6 @@ A Chrome extension designed specifically for students at [Jordan University of S
 │   │   ├── eva.js
 │   │   ├── RegHelperInject.js
 │   │   ├── guidancePlanVisualizer.js  # 🆕 Interactive tree view
-│   │   ├── academicPlanEnhancer.js    # 🆕 Progress dashboard
-│   │   └── studentCardModernizer.js   # 🆕 Modern student card
 │   ├── pages/             # Extension pages (popup, info, etc.)
 │   │   ├── popup.html
 │   │   ├── popup.js
