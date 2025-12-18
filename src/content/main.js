@@ -706,7 +706,7 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
 
         .search-menu-input {
             flex: 1 !important;
-            padding: 8px 12px;
+            padding: 8px 1px;
             border: none;
             border-radius: 6px;
             background: rgba(255,255,255,0.9);
