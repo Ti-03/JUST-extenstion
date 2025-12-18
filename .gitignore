@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE - VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - JetBrains
+.idea/
+*.iml
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Extension packages
+*.crx
+*.pem
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
+~*
+
+# Environment variables
+.env
+.env.local
+
+# Archives
+*.rar
+*.7z

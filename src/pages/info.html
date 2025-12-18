@@ -1,0 +1,222 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles/buttonsStyle.css" />
+
+<style>
+:root {
+    --primary-color: #1857a4;
+    --secondary-color: #2ea400;
+    --dark-bg: rgb(41, 48, 51);
+    --darker-bg: rgb(30, 30, 30);
+    --light-text: white;
+    --hover-color: rgb(24, 87, 164);
+    --card-bg: rgb(35, 42, 45);
+    --input-bg: rgb(50, 57, 60);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--darker-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 63, 63); 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+    width: 300px;
+    overflow-x: hidden;
+    font-size: 13px;
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--hover-color);
+}
+
+h3 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darker-bg);
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    z-index: 10;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(0, 183, 255);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.back-button {
+    width: fit-content; 
+    height: max-content; 
+    font-size: 30px; 
+    position: fixed; 
+    top: 5px; 
+    left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1) translateX(-2px);
+    background-color: var(--hover-color);
+}
+
+.info-card {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.info-card h3 {
+    color: white;
+    margin: 0 0 6px 0;
+    font-size: 16px;
+}
+
+.info-card p {
+    color: white;
+    margin: 6px 0 0 0;
+    line-height: 1.4;
+    font-size: 13px;
+}
+
+.feature-list {
+    margin-top: 8px;
+    padding-left: 15px;
+    text-align: left;
+}
+
+.feature-list li {
+    margin-bottom: 5px;
+    position: relative;
+    font-size: 12px;
+}
+
+.feature-list li::before {
+    content: "";
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, rgb(61, 71, 76), rgb(70, 71, 72));
+    width: 90%;
+    margin: 30px auto;
+    border: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.version {
+    font-size: 12px;
+    color: #aaa;
+    margin: 40px 0 30px 0;
+}
+</style>
+</head>
+
+<body>
+    <a href="popup.html"><button class="back-button" id="RegHelper2">&lt;</button></a>
+    
+    <a><h1 class="fade-in">About</h1></a>
+    
+    <div class="info-card fade-in delay-1">
+        <h3>What is JUST Extension?</h3>
+        <p>JUST Extension is an all-in-one Chrome extension specifically designed to enhance the browsing experience for students at Jordan University of Science and Technology.</p>
+    </div>
+    
+    <div class="info-card fade-in delay-2">
+        <h3>Features</h3>
+        <p>JUST Extension offers several helpful tools:</p>
+        <ul class="feature-list">
+            <li>Dark theme for easier browsing</li>
+            <li>Automatic course evaluation filler</li>
+            <li>Course registration helper</li>
+            <li>GPA calculator (semester & cumulative)</li>
+            <li>Quick access to important university links</li>
+            <li>Auto-close notifications</li>
+        </ul>
+    </div>
+    
+    <div class="info-card fade-in delay-3">
+        <h3>How to Use</h3>
+        <p>Simply click on the features you'd like to use from the main menu. Each tool is designed to be intuitive and user-friendly. For the GPA calculator and Register Helper, you can access them via the buttons on the main page.</p>
+    </div>
+    
+    <p class="version">Version 1.206</p>
+    
+    <footer><a href="https://linktr.ee/ti03" target="_blank">Ti &copy; 2025</a></footer>
+</body>
+</html>

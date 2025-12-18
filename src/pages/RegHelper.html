@@ -1,0 +1,296 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../styles/buttonsStyle.css" />
+
+<style>
+:root {
+    --primary-color: #1857a4;
+    --secondary-color: #2ea400;
+    --dark-bg: rgb(41, 48, 51);
+    --darker-bg: rgb(30, 30, 30);
+    --light-text: white;
+    --hover-color: rgb(24, 87, 164);
+    --card-bg: rgb(35, 42, 45);
+    --input-bg: rgb(50, 57, 60);
+    --danger-color: #e53935;
+    --warning-color: #ff9800;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--darker-bg);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(63, 63, 63); 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    align-content: center;
+    text-align: center; 
+    width: 314px;
+    height: 550px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--hover-color);
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darker-bg);
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    z-index: 10;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(0, 183, 255);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.back-button {
+    width: fit-content; 
+    height: max-content; 
+    font-size: 30px; 
+    position: fixed; 
+    top: 5px; 
+    left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+.clear-all-button {
+    width: fit-content; 
+    height: max-content; 
+    font-size: 15px; 
+    position: fixed; 
+    top: 5px; 
+    right: 5px;
+    background-color: var(--danger-color);
+    transition: background-color 0.3s ease;
+}
+
+.clear-all-button:hover {
+    background-color: #f44336;
+}
+
+input[type="text"] {
+    background-color: var(--input-bg);
+    color: var(--light-text);
+    border: 1px solid #455a64;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(24, 87, 164, 0.2);
+    outline: none;
+}
+
+#addEntrie {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0;
+    line-height: 1;
+}
+
+#addEntrie:hover {
+    background-color: #38c700;
+    transform: translateY(-2px);
+}
+
+.reg-form {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#Entries {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.course-entry {
+    background-color: var(--card-bg);
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.course-entry:hover {
+    transform: translateX(5px);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.course-name {
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+}
+
+.course-details {
+    display: flex;
+    justify-content: space-between;
+    color: #aaa;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.course-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.fill-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    margin-right: 5px;
+}
+
+.fill-btn:hover {
+    background-color: #1565c0;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex: 0 0 auto;
+    width: fit-content;
+}
+
+.delete-btn:hover {
+    background-color: #f44336;
+}
+
+.empty-state {
+    color: #aaa;
+    margin-top: 40px;
+    font-style: italic;
+}
+
+/* Add animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.course-entry {
+    animation: fadeIn 0.3s ease-out;
+}
+</style>
+</head>
+
+<body>
+    <a><button class="back-button" id="RegHelper2">&lt;</button></a>
+    <a><button class="clear-all-button" id="clearAll">Clear All</button></a>
+    
+    <a href="https://services.just.edu.jo/sturegistration/Login.aspx" target="_blank"><h1>Register Helper</h1></a>
+    
+    <div class="reg-form">
+        <form id="courseForm">
+            <input type="text" size="10px" id="CName" placeholder="Course name" required>
+            <input type="text" size="10px" maxlength="10" id="CNumber" placeholder="Line number" required>
+            <input type="text" size="2" maxlength="3" id="CSection" placeholder="Section" required>
+            <a><button id="addEntrie" type="submit">+</button></a>
+        </form>
+    </div>
+
+    <div id="Entries">
+        <!-- Entries will be added here dynamically -->
+        <div class="empty-state" id="emptyState">No courses added yet</div>
+    </div>
+    
+    <footer><a href="https://linktr.ee/ti03" target="_blank">Ti &copy; 2025</a></footer>
+    
+    <script src="RegHelper.js"></script>
+</body>
+</html>

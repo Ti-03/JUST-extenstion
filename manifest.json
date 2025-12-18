@@ -1,0 +1,125 @@
+{
+   "name": "JUST extension",
+   "manifest_version": 3,
+   "version": "1.207",
+   "description": "JUST extension makes it easier for you to browse JUST website",
+   "icons": {
+      "128": "icons/128.png",
+      "48": "icons/48.png"
+   },
+   "action": {
+      "default_title": "JUST extension",
+      "default_popup": "src/pages/popup.html"
+   },
+   "background": {
+      "service_worker": "src/background/background.js"
+   },
+   "permissions": [
+      "activeTab",
+      "storage",
+      "notifications"
+   ],
+   "host_permissions": [
+      "https://services.just.edu.jo/*"
+   ],
+   "content_scripts": [
+      {
+         "matches": [
+            "https://services.just.edu.jo/*"
+         ],
+         "exclude_matches": [
+            "https://services.just.edu.jo/stuservices/",
+            "https://services.just.edu.jo/stuservices/login.aspx",
+            "https://services.just.edu.jo/stuservices/login.aspx*",
+            "https://services.just.edu.jo/stuservices",
+            "https://services.just.edu.jo/sturegistration/Login.aspx",
+            "https://services.just.edu.jo/sturegistration*",
+            "https://services.just.edu.jo/courseschedule*",
+            "https://services.just.edu.jo/*_En.aspx",
+            "https://services.just.edu.jo/*_en.aspx",
+            "https://services.just.edu.jo/stuservices/Student/Popup/Attendance.aspx*"
+         ],
+         "js": [
+            "src/content/main.js"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/",
+            "https://services.just.edu.jo/stuservices/login.aspx",
+            "https://services.just.edu.jo/stuservices/login.aspx*",
+            "https://services.just.edu.jo/stuservices"
+         ],
+         "exclude_matches": [
+            "https://services.just.edu.jo/*_En.aspx",
+            "https://services.just.edu.jo/*_en.aspx"
+         ],
+         "js": [
+            "src/content/login.js"
+         ]
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/Student/CourseQA/*",
+            "https://services.just.edu.jo/stuservices/Student/Misc/eval.aspx"
+         ],
+         "js": [
+            "src/content/inject.js"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/Student/Default.aspx",
+            "https://services.just.edu.jo/stuservices/Student/default.aspx",
+            "https://services.just.edu.jo/stuservices/student/Default.aspx"
+         ],
+         "exclude_matches": [
+            "https://services.just.edu.jo/*_En.aspx",
+            "https://services.just.edu.jo/*_en.aspx"
+         ],
+         "js": [
+            "src/utils/fastButtons.js"
+         ],
+         "css": [
+            "src/styles/fastButtons.css"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/sturegistration/*",
+            "https://services.just.edu.jo/Sturegistration/*"
+         ],
+         "js": [
+            "src/content/RegHelperInject.js"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/",
+            "https://services.just.edu.jo/stuservices/login.aspx",
+            "https://services.just.edu.jo/stuservices/login.aspx*",
+            "https://services.just.edu.jo/stuservices",
+            "https://services.just.edu.jo/stuservices/Student/Default.aspx",
+            "https://services.just.edu.jo/stuservices/Student/default.aspx",
+            "https://services.just.edu.jo/stuservices/student/Default.aspx"
+         ],
+         "js": [
+            "src/utils/Ads.js"
+         ],
+         "run_at": "document_end"
+      },
+      {
+         "matches": [
+            "https://services.just.edu.jo/stuservices/Student/Reg/StudentCard.aspx"
+         ],
+         "js": [
+            "src/utils/studentCardFetch.js"
+         ],
+         "run_at": "document_end"
+      }
+   ]
+}

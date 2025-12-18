@@ -1,0 +1,457 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/buttonsStyle.css" />
+
+<style>
+:root {
+    --primary-color: #1857a4;
+    --secondary-color: #2ea400;
+    --accent-color: #f5b70a;
+    --dark-bg: rgb(30, 35, 40);
+    --darker-bg: rgb(22, 26, 30);
+    --light-text: white;
+    --hover-color: rgb(24, 87, 164);
+    --card-bg: rgb(35, 42, 45);
+    --input-bg: rgb(50, 57, 60);
+    --box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    
+    /* Grade colors */
+    --a-plus-color: #2ea400;
+    --a-color: #3ab500;
+    --a-minus-color: #4ac600;
+    --b-plus-color: #59d700;
+    --b-color: #68e800;
+    --b-minus-color: #86ea00;
+    --c-plus-color: #a4ec00;
+    --c-color: #c2ee00;
+    --c-minus-color: #e0ef00;
+    --d-plus-color: #eeef00;
+    --d-color: #efcf00;
+    --d-minus-color: #efb000;
+    --f-color: #ef3000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--darker-bg);
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #3d4852;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5964; 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 340px;
+    height: 550px;
+    margin: 0;
+    padding: 0 0 30px 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 12px;
+    font-size: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--hover-color);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--dark-bg);
+    padding: 10px 0 5px 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-summary {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #adb5bd;
+    margin-bottom: 10px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.summary-value {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--light-text);
+    margin-top: 2px;
+}
+
+.summary-value.highlight {
+    color: var(--secondary-color);
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    margin-bottom: 15px;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    flex: 1;
+    background-color: var(--input-bg);
+    border: 1px solid #455a64;
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--light-text);
+    font-size: 13px;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(24, 87, 164, 0.2);
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+.filter-chip {
+    background-color: var(--darker-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.filter-chip.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.sort-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.sort-label {
+    font-size: 11px;
+    color: #adb5bd;
+}
+
+.sort-select {
+    background-color: var(--input-bg);
+    color: var(--light-text);
+    border: 1px solid #455a64;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 11px;
+}
+
+.course-list {
+    padding: 5px 16px;
+    overflow-y: auto;
+    height: calc(100vh - 240px);
+}
+
+.course-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.current-semester {
+    background-color: rgba(24, 87, 164, 0.2);
+    border-left: 3px solid var(--primary-color);
+}
+
+.failed-course {
+    border-left: 3px solid var(--f-color);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.course-title {
+    font-weight: 600;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.course-grade {
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 2px 6px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.grade-A-plus {
+    color: var(--a-plus-color);
+}
+
+.grade-A {
+    color: var(--a-color);
+}
+
+.grade-A-minus {
+    color: var(--a-minus-color);
+}
+
+.grade-B-plus {
+    color: var(--b-plus-color);
+}
+
+.grade-B {
+    color: var(--b-color);
+}
+
+.grade-B-minus {
+    color: var(--b-minus-color);
+}
+
+.grade-C-plus {
+    color: var(--c-plus-color);
+}
+
+.grade-C {
+    color: var(--c-color);
+}
+
+.grade-C-minus {
+    color: var(--c-minus-color);
+}
+
+.grade-D-plus {
+    color: var(--d-plus-color);
+}
+
+.grade-D {
+    color: var(--d-color);
+}
+
+.grade-D-minus {
+    color: var(--d-minus-color);
+}
+
+.grade-F {
+    color: var(--f-color);
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: #adb5bd;
+}
+
+.points-value {
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.course-status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 0 0 0 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.no-courses {
+    text-align: center;
+    color: #adb5bd;
+    margin-top: 50px;
+    font-style: italic;
+}
+
+.back-button {
+    width: 32px; 
+    height: 32px; 
+    font-size: 20px; 
+    position: fixed; 
+    top: 8px; 
+    left: 8px;
+    background-color: var(--darker-bg);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darker-bg);
+    width: 100%;
+    height: 18px;
+    font-size: 11px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 8px;
+    z-index: 10;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(0, 183, 255);
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.empty-state-message {
+    color: #adb5bd;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* For mobile device compatibility */
+
+</style>
+</head>
+
+<body>
+    <button class="back-button" id="backButton">←</button>
+    
+    <header>
+        <h1>Course Records</h1>
+        
+        <div class="header-summary">
+            <div class="summary-item">
+                <span>Courses</span>
+                <span id="totalCourses" class="summary-value">0</span>
+            </div>
+            <div class="summary-item">
+                <span>Hours</span>
+                <span id="totalHours" class="summary-value">0</span>
+            </div>
+            <div class="summary-item">
+                <span>GPA</span>
+                <span id="gpaValue" class="summary-value highlight">0.00</span>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search courses...">
+            </div>
+            
+            <div class="filter-options">
+                <div class="filter-chip active" data-filter="all">All</div>
+                <div class="filter-chip" data-filter="A">A Grades</div>
+                <div class="filter-chip" data-filter="B">B Grades</div>
+                <div class="filter-chip" data-filter="C">C Grades</div>
+                <div class="filter-chip" data-filter="D">D Grades</div>
+                <div class="filter-chip" data-filter="F">F Grades</div>
+                <div class="filter-chip" data-filter="current">Current</div>
+            </div>
+            
+            <div class="sort-options">
+                <span class="sort-label">Sort by:</span>
+                <select id="sortSelect" class="sort-select">
+                    <option value="code">Course Code</option>
+                    <option value="name">Course Name</option>
+                    <option value="grade-desc">Grade (High to Low)</option>
+                    <option value="grade-asc">Grade (Low to High)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Empty state for no data -->
+    <div id="emptyState" class="empty-state" style="display:none;">
+        <p class="empty-state-message">No course data available. Visit the Student Card page first.</p>
+        <a href="studentInfo.html">
+            <button class="load-data-button">Go Back</button>
+        </a>
+    </div>
+    
+    <!-- Course list will be populated here -->
+    <div id="courseList" class="course-list"></div>
+    
+    <footer>
+        <a href="https://linktr.ee/ti03" target="_blank">Ti &copy; 2025</a>
+    </footer>
+    
+    <script src="courses.js"></script>
+</body>
+</html>

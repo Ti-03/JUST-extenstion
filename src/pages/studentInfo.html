@@ -1,0 +1,388 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../styles/buttonsStyle.css" />
+
+<style>
+:root {
+    --primary-color: #1857a4;
+    --secondary-color: #2ea400;
+    --accent-color: #f5b70a;
+    --dark-bg: rgb(30, 35, 40);
+    --darker-bg: rgb(22, 26, 30);
+    --light-text: white;
+    --hover-color: rgb(24, 87, 164);
+    --card-bg: rgb(35, 42, 45);
+    --input-bg: rgb(50, 57, 60);
+    --box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--darker-bg);
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #3d4852;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5964; 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 280px;
+    height: 480px;
+    margin: 0;
+    padding: 0 0 30px 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 12px;
+    font-size: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: var(--hover-color);
+}
+
+button {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--darker-bg);
+    width: 100%;
+    height: 18px;
+    font-size: 11px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 8px;
+    z-index: 10;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(0, 183, 255);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.back-button {
+    width: 32px; 
+    height: 32px; 
+    font-size: 20px; 
+    position: fixed; 
+    top: 8px; 
+    left: 8px;
+    background-color: var(--darker-bg);
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+}
+
+.info-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 15px auto;
+    max-width: 90%;
+    box-shadow: var(--box-shadow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.student-name {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--light-text);
+    text-align: center;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 13px;
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #adb5bd;
+}
+
+.info-icon {
+    margin-right: 6px;
+    opacity: 0.7;
+    font-size: 12px;
+}
+
+.info-value {
+    text-align: right;
+    font-weight: 500;
+}
+
+.highlight {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.action-button {
+    padding: 8px 0;
+    width: 45%;
+    font-size: 13px;
+    color: white;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+}
+
+.primary-button:hover {
+    background-color: #1e65c0;
+}
+
+.secondary-button {
+    background-color: var(--secondary-color);
+}
+
+.secondary-button:hover {
+    background-color: #34b700;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
+.view-card-button {
+    background-color: var(--accent-color);
+    color: #222;
+    padding: 10px 0;
+    width: 85%;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-card-button:hover {
+    background-color: #ffbf00;
+}
+
+.view-courses-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    width: 85%;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-courses-button:hover {
+    background-color: #1e65c0;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* No data state */
+.no-data-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.no-data-message {
+    color: #adb5bd;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.load-data-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.load-data-button:hover {
+    background-color: #1e65c0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#dataContainer, #noDataContainer {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+    <a><button class="back-button" id="backButton">←</button></a>
+ 
+    <h1 class="fade-in">Student Profile</h1>
+    
+    <!-- No data state -->
+    <div id="noDataContainer" class="no-data-container fade-in">
+        <p class="no-data-message">No student data available. Visit the Student Card page to load your information.</p>
+        <a href="https://services.just.edu.jo/stuservices/Student/Reg/StudentCard.aspx" target="_blank">
+            <button class="load-data-button">Visit Student Card</button>
+        </a>
+    </div>
+    
+    <!-- Data loaded state -->
+    <div id="dataContainer">
+        <div class="info-card fade-in">
+            <div class="card-header">
+                <div class="student-name" id="studentName">Loading...</div>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Student ID:</span>
+                <span id="studentId" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Department:</span>
+                <span id="department" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> GPA:</span>
+                <span id="gpa" class="info-value highlight">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Completed Hours:</span>
+                <span id="completedHours" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Passed Hours:</span>
+                <span id="passedHours" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Plan Hours:</span>
+                <span id="planHours" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Status:</span>
+                <span id="studentStatus" class="info-value">-</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label"><span class="info-icon">•</span> Plan Year:</span>
+                <span id="planYear" class="info-value">-</span>
+            </div>
+        </div>
+        
+        <div class="btn-container fade-in">
+            <div class="btn-row">
+                <button id="refreshDataBtn" class="action-button primary-button">Refresh</button>
+                <button id="gpaCalculatorBtn" class="action-button secondary-button">Calculator</button>
+            </div>
+            
+            <button id="viewCoursesBtn" class="view-courses-button">View All Courses</button>
+            
+            <a href="https://services.just.edu.jo/stuservices/Student/Reg/StudentCard.aspx" target="_blank">
+                <button class="view-card-button">View Student Card</button>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="https://linktr.ee/ti03" target="_blank">Ti &copy; 2025</a>
+    </footer>
+    
+    <script src="studentInfo.js"></script>
+</body>
+</html>
