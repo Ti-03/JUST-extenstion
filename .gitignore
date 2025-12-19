@@ -13,6 +13,7 @@ ref/
 !.vscode/extensions.json
 *.md
 !readme.md
+!PrivacyPolicy.md
 
 # IDE - JetBrains
 .idea/
