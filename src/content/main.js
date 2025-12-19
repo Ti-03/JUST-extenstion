@@ -791,53 +791,18 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
     `;
     document.head.appendChild(modernMenuStyle);
 
-    // Add icons to menu items
-    const menuIcons = {
-        'نتائج': '📊',
-        'الجدول': '📅',
-        'التسجيل': '✏️',
-        'المالية': '💰',
-        'مالية': '💳',
-        'الخطة': '📚',
-        'بطاقة': '🎫',
-        'المعلومات': 'ℹ️',
-        'الوثائق': '📄',
-        'الإمتحانات': '📝',
-        'امتحان': '✍️',
-        'استثناء': '⚠️',
-        'تحويل': '🔄',
-        'التخصص': '🎓',
-        'الكلمة السرية': '🔐',
-        'خروج': '🚪',
-        'التقييم': '⭐',
-        'الحراك': '🌍',
-        'القروض': '💵',
-        'الفواتير': '🧾',
-        'المكتبة': '📖',
-        'الرسائل': '✉️',
-        'المخالفات': '⚖️'
-    };
-
+    // Remove icon functionality - no longer adding emojis to menu items
     const menuItems = document.querySelectorAll('#ctl00_MainMenuOnSeat li a');
     menuItems.forEach(item => {
         const text = item.textContent.trim();
-        const icon = Object.keys(menuIcons).find(key => text.includes(key));
         
-        if (icon) {
-            // Wrap existing text in span
-            const textNode = item.childNodes[0];
-            if (textNode && textNode.nodeType === 3) {
-                const textSpan = document.createElement('span');
-                textSpan.className = 'menu-text';
-                textSpan.textContent = textNode.textContent.trim();
-                textNode.replaceWith(textSpan);
-            }
-            
-            // Add icon at the beginning
-            const iconSpan = document.createElement('span');
-            iconSpan.className = 'menu-icon';
-            iconSpan.textContent = menuIcons[icon];
-            item.insertBefore(iconSpan, item.firstChild);
+        // Wrap existing text in span for styling
+        const textNode = item.childNodes[0];
+        if (textNode && textNode.nodeType === 3) {
+            const textSpan = document.createElement('span');
+            textSpan.className = 'menu-text';
+            textSpan.textContent = textNode.textContent.trim();
+            textNode.replaceWith(textSpan);
         }
     });
 
@@ -913,7 +878,7 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
         const recentContainer = document.createElement('div');
         recentContainer.className = 'recent-items';
         recentContainer.innerHTML = `
-            <div class="recent-title">⚡ آخر الصفحات المستخدمة</div>
+            <div class="recent-title">آخر الصفحات المستخدمة</div>
             ${recent.slice(0, 3).map(item => `
                 <a href="${item.url}" class="recent-link">${item.text}</a>
             `).join('')}
@@ -930,11 +895,10 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
         item.addEventListener('click', function() {
             const text = this.textContent.trim();
             const url = this.href;
-            const icon = this.querySelector('.menu-icon')?.textContent || '📌';
             
             let recent = JSON.parse(localStorage.getItem('recentMenuItems') || '[]');
             recent = recent.filter(r => r.url !== url);
-            recent.unshift({ text, url, icon, date: Date.now() });
+            recent.unshift({ text, url, date: Date.now() });
             recent = recent.slice(0, 10);
             
             localStorage.setItem('recentMenuItems', JSON.stringify(recent));
