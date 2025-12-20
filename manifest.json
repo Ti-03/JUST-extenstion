@@ -16,8 +16,7 @@
    },
    "permissions": [
       "activeTab",
-      "storage",
-      "notifications"
+      "storage"
    ],
    "host_permissions": [
       "https://services.just.edu.jo/*"
