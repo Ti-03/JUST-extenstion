@@ -1,105 +1,24 @@
-# <img src="/icons/128.png" alt="JUST-extension-Logo" style="width:32px;"> JUST Extension
+# JUST Extension
 
-A Chrome extension designed specifically for students at [Jordan University of Science and Technology (JUST)](https://services.just.edu.jo/stuservices/login.aspx).
+<img align="right" height="200" src="/icons/128.png" alt="JUST-extension-Logo"> 
+
+A Chrome extension designed specifically for the [students portal](https://services.just.edu.jo/stuservices/login.aspx) at **Jordan University of Science and Technology (JUST)**.
+Check our [youtube tutorial](https://www.youtube.com/watch?v=7kzTqBQONBo) to explore the latest features.
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-blue)](https://chrome.google.com/webstore/detail/just-extension/ckpjnaimhgfdngbhcojbmlmnncdmenef)
 
-## 🎥 Demo
-
-[![JUST Extension Demo](https://img.youtube.com/vi/7kzTqBQONBo/0.jpg)](https://www.youtube.com/watch?v=7kzTqBQONBo)
-
-
-## ✨ Features
-
-### 🌙 Core Features
-- **Dark Theme** - Enable dark mode for comfortable browsing
 - **Auto Course Evaluation** - Automatically complete course evaluations
+- **Dark Theme** - Enable dark mode for comfortable browsing
+- **GPA Calculator** - Calculate your GPA quickly
 - **Registration Helper** - Assist with course registration
 - **Quick Links** - Fast access to frequently used pages
 - **Student Info Display** - Easy access to your student information
-- **GPA Calculator** - Calculate your GPA quickly
 - **Course Schedule Viewer** - View your courses in an organized manner
 - And much more...
 
-## 🚀 Installation
-
-### From Chrome Web Store
-[Download the extension from the Chrome Web Store](https://chrome.google.com/webstore/detail/just-extension/ckpjnaimhgfdngbhcojbmlmnncdmenef)
-
-### Manual Installation (Developer Mode)
-1. Clone this repository or download as ZIP
-2. Open Chrome and navigate to `chrome://extensions/`
-3. Enable "Developer mode" in the top right corner
-4. Click "Load unpacked" and select the extension directory
-5. The JUST Extension should now be installed and active
-
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── background/         # Background scripts
-│   │   └── background.js
-│   ├── content/           # Content scripts injected into pages
-│   │   ├── main.js
-│   │   ├── login.js
-│   │   ├── inject.js
-│   │   ├── eva.js
-│   │   ├── RegHelperInject.js
-│   │   ├── guidancePlanVisualizer.js  # 🆕 Interactive tree view
-│   ├── pages/             # Extension pages (popup, info, etc.)
-│   │   ├── popup.html
-│   │   ├── popup.js
-│   │   ├── studentInfo.html
-│   │   ├── studentInfo.js
-│   │   ├── courses.html
-│   │   ├── courses.js
-│   │   ├── Calculator.html
-│   │   ├── Calculator.js
-│   │   ├── RegHelper.html
-│   │   ├── RegHelper.js
-│   │   └── info.html
-│   ├── styles/            # CSS files
-│   │   ├── buttonsStyle.css
-│   │   ├── fastButtons.css
-│   │   └── modernTheme.css            # 🆕 Modern theme system
-│   └── utils/             # Utility scripts
-│       ├── Ads.js
-│       ├── fastButtons.js
-│       └── studentCardFetch.js
-├── icons/                 # Extension icons
-├── manifest.json          # Extension manifest
-├── LICENSE               # License file
-└── README.md            # This file
-```
-
-## 🔧 Development
-
-This extension is built using:
-- Manifest V3
-- Vanilla JavaScript
-- Chrome Extension APIs
-- Modern CSS with custom properties
-- Responsive design patterns
-
-### Recent Updates (v2.0.0)
-- ✨ Interactive tree visualization for guidance plans
-- 📊 Progress dashboard for academic plans
-- 💳 Modernized student card design
-- 🔍 Enhanced sidebar with search and recent items
-- 🎨 Comprehensive modern theme system
-
-## 📝 License
-
-See the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Support
-
-For issues or questions, please open an issue on GitHub.
+Install the latest version currently available on [Chrome Web Store](https://chrome.google.com/webstore/detail/just-extension/ckpjnaimhgfdngbhcojbmlmnncdmenef)
 
 ---
 
-Made with ❤️ for JUST students
+**Got questions or ideas?** We'd love to hear them! Feel free to open an issue or get in touch.
+**Want to help?** Check out our contribution guidelines. Please let us know you're working on an issue by commenting on it first, this helps us avoid double work!
