@@ -14,7 +14,7 @@ ref/
 *.md
 !readme.md
 !PrivacyPolicy.md
-
+create-issutes.sh
 # IDE - JetBrains
 .idea/
 *.iml

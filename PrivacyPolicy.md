@@ -71,8 +71,8 @@ You have the right to:
 ## Contact Information
 
 If you have any questions or concerns about this privacy policy, please contact us through:
-- GitHub Repository: https://github.com/Ti-03/JUST-extenstion
-- GitHub Issues: https://github.com/Ti-03/JUST-extenstion/issues
+- GitHub Repository: https://github.com/Ti-03/JUST-Extension
+- GitHub Issues: https://github.com/Ti-03/JUST-Extension/issues
 
 ## Disclaimer
 
