@@ -1,4 +1,4 @@
-# JUST Extension
+# Just Extension
 
 <img align="right" height="200" src="/icons/128.png" alt="JUST-extension-Logo"> 
 
