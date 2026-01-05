@@ -1,6 +1,6 @@
 # Just Extension
 
-<img align="right" height="200" src="/icons/128.png" alt="JUST-extension-Logo"> 
+<img align="right" width="25%" src="/icons/128.png" alt="JUST-extension-Logo"> 
 
 A Chrome extension designed specifically for the [students portal](https://services.just.edu.jo/stuservices/login.aspx) at **Jordan University of Science and Technology (JUST)**.
 Check our [youtube tutorial](https://www.youtube.com/watch?v=7kzTqBQONBo) to explore the latest features.
