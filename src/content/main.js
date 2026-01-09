@@ -634,10 +634,6 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
             border-bottom: none !important;
         }
 
-        body .menuDiv #ctl00_MainMenuOnSeat li:hover {
-            transform: translateX(5px) !important;
-        }
-
         body .menuDiv #ctl00_MainMenuOnSeat li a {
             display: flex !important;
             align-items: center !important;
@@ -668,9 +664,6 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
             text-overflow: ellipsis !important;
         }
 
-        .ContainerSubMenu {
-            animation: slideIn 0.3s ease !important;
-        }
 
         body .menuDiv .SubMenuDiv ul li a {
             display: flex !important;
@@ -762,150 +755,8 @@ if(localStorage.getItem("notifications")==1 && test && test.length > 0){
             margin: 0;
         }
 
-        .recent-title {
-            font-size: 12px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
 
-        .recent-link {
-            display: block;
-            padding: 6px 10px;
-            color: rgba(255,255,255,0.95);
-            text-decoration: none;
-            border-radius: 4px;
-            margin-bottom: 4px;
-            font-size: 13px;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .recent-link:hover {
-            background: rgba(255,255,255,0.15);
-            transform: translateX(3px);
-            color: white;
-        }
     `;
-    document.head.appendChild(modernMenuStyle);
-
-    // Remove icon functionality - no longer adding emojis to menu items
-    const menuItems = document.querySelectorAll('#ctl00_MainMenuOnSeat li a');
-    menuItems.forEach(item => {
-        const text = item.textContent.trim();
-        
-        // Wrap existing text in span for styling
-        const textNode = item.childNodes[0];
-        if (textNode && textNode.nodeType === 3) {
-            const textSpan = document.createElement('span');
-            textSpan.className = 'menu-text';
-            textSpan.textContent = textNode.textContent.trim();
-            textNode.replaceWith(textSpan);
-        }
-    });
-
-    // Add search functionality
-    const menuUl = document.querySelector('#ctl00_MainMenuOnSeat');
-    if (menuUl) {
-        const searchContainer = document.createElement('div');
-        searchContainer.className = 'search-menu-container';
-        
-        // Add toggle button
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'sidebar-toggle-btn';
-        toggleBtn.innerHTML = '◀';
-        toggleBtn.title = 'إخفاء/إظهار القائمة';
-        
-        // Create search input
-        const searchInput = document.createElement('input');
-        searchInput.type = 'text';
-        searchInput.className = 'search-menu-input';
-        searchInput.placeholder = '🔍 ابحث في القائمة...';
-        
-        // Insert toggle button first, then search input
-        searchContainer.appendChild(toggleBtn);
-        searchContainer.appendChild(searchInput);
-        
-        menuUl.parentElement.insertBefore(searchContainer, menuUl);
-        
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-            const allMenuItems = document.querySelectorAll('#ctl00_MainMenuOnSeat > li');
-            
-            allMenuItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (searchTerm === '' || text.includes(searchTerm)) {
-                    item.classList.remove('menu-item-hidden');
-                    if (searchTerm !== '') {
-                        item.classList.add('menu-highlight');
-                    } else {
-                        item.classList.remove('menu-highlight');
-                    }
-                } else {
-                    item.classList.add('menu-item-hidden');
-                    item.classList.remove('menu-highlight');
-                }
-            });
-        });
-        
-        // Toggle functionality
-        let sidebarVisible = true;
-        toggleBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            sidebarVisible = !sidebarVisible;
-            
-            if (sidebarVisible) {
-                menuDiv.classList.remove('sidebar-collapsed');
-                document.body.classList.remove('sidebar-collapsed');
-                toggleBtn.innerHTML = '◀';
-            } else {
-                menuDiv.classList.add('sidebar-collapsed');
-                document.body.classList.add('sidebar-collapsed');
-                toggleBtn.innerHTML = '▶';
-            }
-        });
-    }
-
-    // Add recently accessed items
-    function addRecentItems() {
-        const recent = JSON.parse(localStorage.getItem('recentMenuItems') || '[]');
-        if (recent.length === 0) return;
-
-        const recentContainer = document.createElement('div');
-        recentContainer.className = 'recent-items';
-        recentContainer.innerHTML = `
-            <div class="recent-title">آخر الصفحات المستخدمة</div>
-            ${recent.slice(0, 3).map(item => `
-                <a href="${item.url}" class="recent-link">${item.text}</a>
-            `).join('')}
-        `;
-        
-        const menuUl = document.querySelector('#ctl00_MainMenuOnSeat');
-        if (menuUl && menuUl.parentElement) {
-            menuUl.parentElement.insertBefore(recentContainer, menuUl);
-        }
-    }
-
-    // Track menu clicks
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const text = this.textContent.trim();
-            const url = this.href;
-            
-            let recent = JSON.parse(localStorage.getItem('recentMenuItems') || '[]');
-            recent = recent.filter(r => r.url !== url);
-            recent.unshift({ text, url, date: Date.now() });
-            recent = recent.slice(0, 10);
-            
-            localStorage.setItem('recentMenuItems', JSON.stringify(recent));
-        });
-    });
-
-    addRecentItems();
 
 })();
 
